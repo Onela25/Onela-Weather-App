@@ -1,11 +1,12 @@
 body {
-    background-color: rgb(212, 233, 226);
+    background-color: rgb(212,233,226);
+    background-size: cover;
 }
 a {
     color: aqua;
 }
 .weather-app {
-    background-image: -o-linear-gradient();
+    background:white;
     max-width:600px;
     margin:45px auto;
     box-shadow: 0 30px 50px rgba(65,50,100,0.08);
@@ -64,7 +65,7 @@ main {
 }
 
 .weather-app-unit{
-    margin-top:16px;
+    margin-top:20px;
     font-size: 28px;
 }
 .weather-app-temperature-container {
