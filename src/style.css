@@ -1,5 +1,5 @@
 body {
-    background-color: aquamarine;
+    background-color: rgb(212, 233, 226);
 }
 a {
     color: aqua;
@@ -13,12 +13,12 @@ a {
     padding: 30px;
 }
 header {
-    border-bottom: 1px solid aquamarine;
+    border-bottom: 1px solid rgb(255, 255, 255);
     padding: 0 30px 0 ;
 }
 
 .search-form-input {
-background-color: rgb(188, 242, 224);
+background-color: rgb(212, 233, 226);
 border:none;
 border-radius: 6px;
 width: 80%;
@@ -28,11 +28,11 @@ font-size: 16px;
 
 }
 .search-form-button {
-    background-color: aqua;
-    padding: 15px 20px;
-    border:none;
+    background-color: aqua ;
+    padding: 15px 20px ;
+    border:none ;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 16px ;
     margin-left: 5px;
     color: white ;
 }
@@ -57,7 +57,7 @@ font-size: 16px;
     font-weight: 500;
 }
 .weather-app-details strong {
-    color: orangered;
+    color:darkcyan;
 }
 main {
     padding: 30px 0 ;
