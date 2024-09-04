@@ -62,12 +62,17 @@ main {
 .weather-app-details strong {
     color:darkcyan;
 }
-.weather-app-icon {
-    font-size: 44px;
-    margin-top: 22px;
+
+.weather-app-unit{
+    margin-top:16px;
+    font-size: 28px;
 }
 .weather-app-temperature-container {
    display: flex; 
+}
+.weather-app-icon{
+    font-size: 44px;
+    margin-top: 22px;
 }
 .weather-app-temperature {
     font-size:88px ;
