@@ -1,6 +1,9 @@
 body {
     background-color: aquamarine;
 }
+a {
+    color: aqua;
+}
 .weather-app {
     background:white;
     max-width:600px;
@@ -9,7 +12,49 @@ body {
     border-radius: 16px;
     padding: 30px;
 }
+header {
+    border-bottom: 1px solid aquamarine;
+    padding: 0 030px 0 ;
+}
 
-.serach-form {
+.search-form-input {
+background-color: aquamarine;
+border:none;
+border-radius: 6px;
+width: 80%;
+padding:15px 20px;
+font-size: 16px;
+
+}
+.search-form-button {
+    background-color: aqua;
+    padding: 15px 20px;
+    border:none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-left: 5px;
+    border-radius: 6px;
+    color: white ;
+}
+.search-form-button:hover {
+    background-color: darkcyan;
+    cursor: pointer;
+}
+@media (max-width:600px) {
+    .weather-app { 
+        margin: 20px;
+        padding: 20px;
+    }
+    .search-form-input, .search-form-button {
+        width:100%;
+        padding: 10px;
+    }
+}
+footer {
+    border-top: 1px solid aquamarine;
+    padding: 30px 0 0 0;
+    text-align: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
     
 }
