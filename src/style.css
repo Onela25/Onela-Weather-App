@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(212,233,226);
+    background-color: rgb(175, 233, 213);
     background-size: cover;
 }
 a {
@@ -14,12 +14,12 @@ a {
     padding: 30px;
 }
 header {
-    border-bottom: 1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(250, 252, 253);
     padding: 0 30px 0 ;
 }
 
 .search-form-input {
-background-color: rgb(212, 233, 226);
+background-color: rgb(178, 232, 231);
 border:none;
 border-radius: 6px;
 width: 80%;
@@ -29,7 +29,7 @@ font-size: 16px;
 
 }
 .search-form-button {
-    background-color: aqua ;
+    background-color: rgb(68, 236, 242);
     padding: 15px 20px ;
     border:none ;
     border-radius: 6px;
@@ -62,14 +62,17 @@ main {
 }
 .weather-app-details strong {
     color:darkcyan;
+   
 }
 
 .weather-app-unit{
     margin-top:20px;
-    font-size: 28px;
+    font-size: 30px;
+    
 }
 .weather-app-temperature-container {
    display: flex; 
+   margin: 10px;
 }
 .weather-app-icon{
     font-size: 44px;
