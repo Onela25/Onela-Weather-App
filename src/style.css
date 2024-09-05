@@ -1,6 +1,8 @@
 body {
-    background-color: rgb(175, 233, 213);
+background-image: url('images/weather.png');
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 a {
     color: rgb(14, 181, 181);
@@ -77,6 +79,10 @@ main {
 .weather-app-icon{
     font-size: 44px;
     margin-top: 22px;
+}
+.weather-app-icon img {
+    width: 44px;
+    height: 44px;
 }
 .weather-app-temperature {
     font-size:88px ;
