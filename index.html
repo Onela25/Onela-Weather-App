@@ -16,7 +16,8 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
 
-    <title>Onela App Forecast</title>
+<title>Onela App Forecast</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             <form class="search-form" id="search-form">
                 <input type="search" placeholder="Enter a city..." required id="search-form-input"
                     class="search-form-input" />
-                <input type="submit" value="search" class="search-form-button" />
+                <input type="submit" value="Search" class="search-form-button" />
             </form>
         </header>
         <main>
@@ -36,65 +37,18 @@
                         <span id="time"></span>, sunny
                         <span id="description"> Clear Sky</span>
                         <br />
-                        Humidity: <strong>15%</strong>, Wind: <strong>2.10 km/h</strong>
+                        Humidity: <strong id="humidity">15%</strong>, Wind: <strong id="wind-speed">2.10 km/h</strong>
                     </p>
                 </div>
                 <div class="weather-app-temperature-container">
-                    <div class="weather-app-icon">☀️</div>
-                    <div class="weather-app-temperature">20</div>
+                    <div id="icon" class="weather-app-icon">☀️</div>
+                    <div id="temperature" class="weather-app-temperature">20</div>
                     <div class="weather-app-unit">°C</div>
                 </div>
             </div>
-            <div class="weather-forecast">
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Tue</div>
-                <div class="weather-forecast-icon">☀️</div> 
-                <div class="weather-forecast-temperatures">
-                <div class="weather-forecast-temperature"><strong>16°</strong></div>
-                    <div class="weather-forecast-temperature">10°</div>
-                 </div>
-                </div>
+            <div id="forecast" class="weather-forecast-container">
+        
             </div>
-        <div class="weather-forecast">
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Wed</div>
-                <div class="weather-forecast-icon">☀️</div>
-                <div class="weather-forecast-temperatures">
-                    <div class="weather-forecast-temperature"><strong>16°</strong></div>
-                    <div class="weather-forecast-temperature">10°</div>
-                </div>
-            </div>
-        </div>
-        <div class="weather-forecast">
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Thu</div>
-                <div class="weather-forecast-icon">☀️</div>
-                <div class="weather-forecast-temperatures">
-                    <div class="weather-forecast-temperature"><strong>16°</strong></div>
-                    <div class="weather-forecast-temperature">10°</div>
-                </div>
-            </div>
-        </div>
-        <div class="weather-forecast">
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Fri</div>
-                <div class="weather-forecast-icon">☀️</div>
-                <div class="weather-forecast-temperatures">
-                    <div class="weather-forecast-temperature"><strong>16°</strong></div>
-                    <div class="weather-forecast-temperature">10°</div>
-                </div>
-            </div>
-        </div>
-        <div class="weather-forecast">
-            <div class="weather-forecast-day">
-                <div class="weather-forecast-date">Sat</div>
-                <div class="weather-forecast-icon">☀️</div>
-                <div class="weather-forecast-temperatures">
-                    <div class="weather-forecast-temperature"><strong>16°</strong></div>
-                    <div class="weather-forescast-temperature">10°</div>
-                </div>
-            </div>
-       
         </main>
         <footer>
             This project was coded by
@@ -102,7 +56,6 @@
             <a href="https://github.com/Onela25/Onela-Weather-App" target="_blank">open-sourced on GitHub</a> and
             <a href="https://golden-kelpie-6eeea4.netlify.app/" target="_blank">hosted on Netlify</a>
         </footer>
-    </div>
     </div>
     <script src="src/index.js"></script>
 </body>
