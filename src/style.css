@@ -91,13 +91,12 @@ main {
 .weather-app-temperature-container {
     display: flex;
     align-items: center;
-    /* Align items vertically */
 }
 
 .weather-app-icon {
     font-size: 44px;
     margin-right: 10px;
-    /* Space between icon and temperature */
+  
 }
 
 .weather-app-icon img {
@@ -114,20 +113,17 @@ main {
 .weather-forecast-container {
     display: flex;
     flex-direction: column;
-    /* Stack forecast items vertically */
     gap: 10px;
     padding: 10px 0;
 }
 
 .weather-forecast {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px;
     display: flex;
-    flex-direction: column;
-    /* Ensure internal elements are in column layout */
-    align-items: center;
-    /* Center align internal elements */
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    justify-content: space-around;
+    margin-top:10px;
+  
+   
 }
 
 .weather-forecast-day {
@@ -135,13 +131,16 @@ main {
     color: rgba(39, 33, 66, 0.4);
     display: flex;
     flex-direction: column;
-    /* Stack elements vertically */
     align-items: center;
 }
 
 .weather-forecast-date {
     font-size: 16px;
     color: rgba(39, 33, 66, 0.4);
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
 .weather-forecast-icon img {
@@ -151,18 +150,16 @@ main {
 
 .weather-forecast-temperatures {
     color: darkcyan;
+    text-align: center;
+    margin-top: 10px;
     display: flex;
-    flex-direction: column;
-    /* Stack temperature values vertically */
-    gap: 5px;
-    align-items: center;
+   justify-content: center;
 }
 
 .weather-forecast-temperature {
     font-size: 16px;
     padding: 0 5px;
 }
-
 footer {
     border-top: 1px solid rgb(255, 255, 255);
     padding: 20px 0 0 0;

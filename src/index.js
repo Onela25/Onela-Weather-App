@@ -1,4 +1,5 @@
 function refreshWeather(response) {
+  
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -15,6 +16,9 @@ function refreshWeather(response) {
   windSpeedElement.innerHTML = `${response.data.wind.speed} km/h`;
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" alt="${response.data.condition.description}" />`;
+
+ 
+  displayForecast(response.data.forecast); 
 
   localStorage.setItem("weatherData", JSON.stringify(response.data));
 }
@@ -56,19 +60,32 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+function displayForecast(forecastData) {
+  
+     forecastData = {
+     daily: [
+     { date: '2024-09-18', icon: 'clear-sky-day', temp_max: 30, temp_min: 20 },
+       { date: '2024-09-19', icon: 'few-clouds-day', temp_max: 28, temp_min: 18 },
+      { date: '2024-09-20', icon: 'windy-day', temp_max: 28, temp_min: 18 },
+      { date: '2024-09-21', icon: 'rainy-day', temp_max: 28, temp_min: 18 },
+      { date: '2024-09-22', icon: 'cloud-day', temp_max: 28, temp_min: 18 },
+     ]
+   };
+
   let forecastHTML = "";
 
-  days.forEach(function(day) {
+  forecastData.daily.forEach(function(day) {
+    const date = new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' });
     forecastHTML += `
     <div class="weather-forecast">
       <div class="weather-forecast-day">
-        <div class="weather-forecast-date">${day}</div>
-        <div class="weather-forecast-icon">${getWeatherIcon("clear-sky-day")}</div>
+        <div class="weather-forecast-date">${date}</div>
+        <div class="weather-forecast-icon">
+          <img src="${getWeatherIcon(day.icon)}" alt="${day.icon}">
+        </div>
         <div class="weather-forecast-temperatures">
-          <div class="weather-forecast-temperature"><strong>16°</strong></div>
-          <div class="weather-forecast-temperature">10°</div>
+          <div class="weather-forecast-temperature"><strong>${day.temp_max}°</strong></div>
+          <div class="weather-forecast-temperature">${day.temp_min}°</div>
         </div>
       </div>
     </div>
@@ -79,10 +96,12 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-document.addEventListener("DOMContentLoaded", displayForecast);
+document.addEventListener("DOMContentLoaded", () => {
+  displayForecast([]);
+});
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-displayForecast();
+
 searchCity("Pretoria");
