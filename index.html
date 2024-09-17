@@ -5,19 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="src/style.css" />
+        rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
-
-<title>Onela App Forecast</title>
-<link rel="stylesheet" href="styles.css">
+    <title>Onela App Forecast</title>
 </head>
 
 <body>
@@ -25,8 +22,8 @@
         <header>
             <form class="search-form" id="search-form">
                 <input type="search" placeholder="Enter a city..." required id="search-form-input"
-                    class="search-form-input" />
-                <input type="submit" value="Search" class="search-form-button" />
+                    class="search-form-input">
+                <input type="submit" value="Search" class="search-form-button">
             </form>
         </header>
         <main>
@@ -34,9 +31,8 @@
                 <div>
                     <h1 class="weather-app-city" id="city">Pretoria</h1>
                     <p class="weather-app-details">
-                        <span id="time"></span>, sunny
-                        <span id="description"> Clear Sky</span>
-                        <br />
+                        <span id="time">Mon 6:12</span>, sunny
+                        <span id="description"> Clear Sky</span><br>
                         Humidity: <strong id="humidity">15%</strong>, Wind: <strong id="wind-speed">2.10 km/h</strong>
                     </p>
                 </div>
@@ -47,7 +43,7 @@
                 </div>
             </div>
             <div id="forecast" class="weather-forecast-container">
-        
+                <!-- Forecast items will be injected here by JavaScript -->
             </div>
         </main>
         <footer>

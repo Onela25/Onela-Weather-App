@@ -16,7 +16,6 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" alt="${response.data.condition.description}" />`;
 
-  
   localStorage.setItem("weatherData", JSON.stringify(response.data));
 }
 
@@ -79,13 +78,11 @@ function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHTML;
 }
-document.addEventListener("DOMContentLoader",displayForecast);
+
+document.addEventListener("DOMContentLoaded", displayForecast);
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-
 displayForecast();
-
-
 searchCity("Pretoria");
