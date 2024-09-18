@@ -15,7 +15,8 @@ a {
 
 .weather-app {
     background: rgb(255, 255, 255);
-    max-width: 500px;
+    max-width: 600px;
+    max-height: auto;
     margin: 10px auto;
     border-radius: 16px;
     padding: 20px;
@@ -119,7 +120,6 @@ main {
 
 .weather-forecast {
     display: flex;
-    background: rgba(255, 255, 255, 0.9);
     justify-content: space-around;
     margin-top:10px;
   
@@ -135,12 +135,13 @@ main {
 }
 
 .weather-forecast-date {
+     text-align: center;
     font-size: 16px;
     color: rgba(39, 33, 66, 0.4);
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 10px;
-    text-align: center;
+   
 }
 
 .weather-forecast-icon img {

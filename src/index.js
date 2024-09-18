@@ -1,5 +1,4 @@
 function refreshWeather(response) {
-  
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -17,8 +16,8 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" alt="${response.data.condition.description}" />`;
 
- 
-  displayForecast(response.data.forecast); 
+  
+  getForecast(response.data.city); 
 
   localStorage.setItem("weatherData", JSON.stringify(response.data));
 }
@@ -60,32 +59,35 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast(forecastData) {
+function getForecast(city) {
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   
-     forecastData = {
-     daily: [
-     { date: '2024-09-18', icon: 'clear-sky-day', temp_max: 30, temp_min: 20 },
-       { date: '2024-09-19', icon: 'few-clouds-day', temp_max: 28, temp_min: 18 },
-      { date: '2024-09-20', icon: 'windy-day', temp_max: 28, temp_min: 18 },
-      { date: '2024-09-21', icon: 'rainy-day', temp_max: 28, temp_min: 18 },
-      { date: '2024-09-22', icon: 'cloud-day', temp_max: 28, temp_min: 18 },
-     ]
-   };
+  axios.get(apiUrl).then(displayForecast);
+}
 
+function displayForecast(response) {
+  console.log(response.data);
+
+  let forecastData = response.data.daily.slice(0,5);
   let forecastHTML = "";
 
-  forecastData.daily.forEach(function(day) {
-    const date = new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' });
+  forecastData.forEach(function(day) {
+    let date = new Date(day.time * 1000).toLocaleDateString('en-US', { weekday: 'short' });
+
+    let maxTemp = Math.round(day.temperature.maximum);
+    let minTemp = Math.round(day.temperature.minimum);
+
     forecastHTML += `
     <div class="weather-forecast">
       <div class="weather-forecast-day">
         <div class="weather-forecast-date">${date}</div>
         <div class="weather-forecast-icon">
-          <img src="${getWeatherIcon(day.icon)}" alt="${day.icon}">
+          <img src="${day.condition.icon_url}" alt="${day.condition.description}">
         </div>
         <div class="weather-forecast-temperatures">
-          <div class="weather-forecast-temperature"><strong>${day.temp_max}°</strong></div>
-          <div class="weather-forecast-temperature">${day.temp_min}°</div>
+          <div class="weather-forecast-temperature"><strong>${maxTemp}°</strong></div>
+          <div class="weather-forecast-temperature">${minTemp}°</div>
         </div>
       </div>
     </div>
@@ -97,11 +99,8 @@ function displayForecast(forecastData) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  displayForecast([]);
+  searchCity("Pretoria");
 });
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
-
-
-searchCity("Pretoria");
