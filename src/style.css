@@ -113,15 +113,18 @@ main {
 
 .weather-forecast-container {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
     padding: 10px 0;
 }
 
 .weather-forecast {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    margin-top:10px;
+    width: calc(50%-20%);
+    box-sizing: border-box;
   
    
 }
@@ -163,7 +166,7 @@ main {
 }
 footer {
     border-top: 1px solid rgb(255, 255, 255);
-    padding: 20px 0 0 0;
+    padding: 20px 10px 0 0;
     text-align: center;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.6);
